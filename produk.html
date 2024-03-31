@@ -158,8 +158,32 @@
                 </div>
             </div>
         </section>
+        <footer class="riki-block footer-small py-4 bg-success">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-8">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html#best-seller">Best Seller</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#our-team">Our Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#review">Review</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#contact-us">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-right">
+                        © 2024 Naval &amp; Creative
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
-
     <script src="js/produk.js"></script>
     <script data-info="bisa tulis kode js di js/produk.js ataupun di bawah sini">
 
@@ -177,11 +201,11 @@
             "robusta": [
                 {
                     "nama": "Late",
-                    "foto": "images/produk/product_Late.jpg"
+                    "foto": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpxhere.com%2Fid%2Fphoto%2F692699&psig=AOvVaw2ZLzM6wYaW_7SHwjZJJEaB&ust=1712013778470000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjsjr7Sn4UDFQAAAAAdAAAAABAE"
                 },
                 {
-                    "nama": "Jozz",
-                    "foto": "images/produk/jozz.jpg"
+                    "nama": "Macciato",
+                    "foto": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Fneilconway%2F3762933980&psig=AOvVaw1DEAFlmh5qpDNOmnGlUYH_&ust=1712013952496000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPC8kpHTn4UDFQAAAAAdAAAAABAF"
                 }
             ],
             "bukan jajan": [
@@ -207,35 +231,35 @@
 
         var kopi_pilihan = data_kopi["robusta"]
 
-function updateTampilan() {
-    baris_produk.innerHTML = ""
-    kopi_pilihan.forEach(kopi => {
-        baris_produk.innerHTML += `<div class="col mb-4">
-                <div class="card">
-                    <img src="${kopi.foto}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">${kopi.nama}</h5>
-                        <div class="row hargasize my-4">
-                            <div class="col">
-                                ${kopi.size}
-                            </div>
-                            <div class="col text-primary fw-bold">
-                                ${kopi.harga}
-                            </div>
+        function updateTampilan() {
+            baris_produk.innerHTML = ""
+            kopi_pilihan.forEach(kopi => {
+                baris_produk.innerHTML += `<div class="col mb-4">
+            <div class="card">
+                <img src="${kopi.foto}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${kopi.nama}</h5>
+                    <div class="row hargasize my-4">
+                        <div class="col">
+                            ${kopi.size}
                         </div>
-                        <a href="${kopi.link}" class="btn btn-primary w-100"><i class="bi bi-cart4"></i> Beli</a>
+                        <div class="col text-primary fw-bold">
+                            ${kopi.harga}
+                        </div>
                     </div>
+                    <a href="${kopi.link}" class="btn btn-primary w-100"><i class="bi bi-cart4"></i> Beli</a>
                 </div>
-            </div>`
-    });
-}
-updateTampilan()
+            </div>
+        </div>`
+            });
+        }
+        updateTampilan()
 
-select_kopi.onchange = function () {
-    kopi_pilihan = data_kopi[select_kopi.value]
-    updateTampilan()
-}
-var sumber = "https://rikikurnia.com/prakerja/api/kopi"
+        select_kopi.onchange = function () {
+            kopi_pilihan = data_kopi[select_kopi.value]
+            updateTampilan()
+        }
+        var sumber = "https://rikikurnia.com/prakerja/api/kopi"
         var sumber2 = "data.json"
         function ambilData() {
             $.getJSON(sumber).then(function (data) {
@@ -245,9 +269,9 @@ var sumber = "https://rikikurnia.com/prakerja/api/kopi"
             })
         }
         ambilData()
-    baris_produk.innerHTML = ''
+        baris_produk.innerHTML = ''
     </script>
-
 </body>
+</footer>
 
 </html>
